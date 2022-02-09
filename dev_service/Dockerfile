@@ -8,6 +8,7 @@ RUN apt-get update \
 WORKDIR /home/boxfuse
 
 RUN wget https://dlcdn.apache.org/tomcat/tomcat-8/v8.5.75/bin/apache-tomcat-8.5.75.tar.gz \
+    && mkdir ./tomcat \
     && tar -xzvf apache-tomcat-8.5.75.tar.gz -C tomcat --strip-components=1 \
     && rm -rf ./tomcat/webapps/*
 
