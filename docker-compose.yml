@@ -6,16 +6,18 @@ services:
     volumes:
       - type: volume
         source: webapp
-        target: /home/boxfuse/tomcat/webapps/
+        target: /home/boxfuse/tomcat/
 
 
   prod:
     build: prod_service
+    depends_on:
+      - dev
     ports: "8080:8080"
     volumes:
       - type: volume
         source: webapp
-        target: /opt/tomcat/webapps/
+        target: /opt/tomcat/
 
 volumes:
   webapp:
