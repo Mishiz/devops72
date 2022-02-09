@@ -3,13 +3,19 @@ version: '3.2'
 services:
   dev:
     build: dev_service
-
-
-
-
-
+    volumes:
+      - type: volume
+        source: webapp
+        target: /home/boxfuse/tomcat/webapps/
 
 
   prod:
     build: prod_service
+    ports: "8080:8080"
+    volumes:
+      - type: volume
+        source: webapp
+        target: /opt/tomcat/webapps/
 
+volumes:
+  webapp:
