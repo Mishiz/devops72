@@ -18,5 +18,5 @@ RUN git clone https://github.com/boxfuse/boxfuse-sample-java-war-hello.git boxfu
     && cp ./target/*.war ./tomcat/webapps/ROOT.war
 
 
-CMD ["/home/boxfuse/tomcat/bin/catalina.sh", "run"]
+CMD ["mvn"]
 
